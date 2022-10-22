@@ -1,0 +1,3 @@
+docker-compose -f "kafka.yaml" up
+docker-compose -f "kafka.yaml" down
+
