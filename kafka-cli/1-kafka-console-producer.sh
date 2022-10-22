@@ -1,10 +1,5 @@
-# Replace "kafka-console-producer.sh"
-# by "kafka-console-producer" or "kafka-console-producer.bat" based on your system # (or bin/kafka-console-producer.sh or bin\windows\kafka-console-producer.bat if you didn't setup PATH / Environment variables)
-
-kafka-console-producer.sh
-
 # producing
-kproducer --topic firstTopic
+kproducer --topic first-topic
 > Hello World
 >My name is Conduktor
 >I love Kafka
@@ -12,7 +7,7 @@ kproducer --topic firstTopic
 
 
 # producing with properties
-kproducer --topic firstTopic --producer-property acks=all
+kproducer --topic first-topic --producer-property acks=all
 > some message that is acked
 > just for fun
 > fun learning!
@@ -42,6 +37,6 @@ ktopic --topic newTopic2 --describe
 
 
 # produce with keys
-kproducer --topic firstTopic --property parse.key=true --property key.separator=:
+kproducer --topic first-topic --property parse.key=true --property key.separator=:
 >example key:example value
->name:Stephane
+>name:ducat
