@@ -16,6 +16,14 @@ public class KafkaTopicConfig {
     @Value(value = "${kafka.bootstrapAddress}")
     private String bootstrapAddress;
     
+    @Value("${kafka.topic}")
+    private String topicName;
+    
+    @Value("${kafka.topic.partition}")
+    private int partition;
+    
+    @Value("${kafka.topic.replicas}")
+    private int isr;
     
 
     @Bean
@@ -27,6 +35,6 @@ public class KafkaTopicConfig {
     
     @Bean
     public NewTopic topic1() {
-         return new NewTopic("first-topic", 1, (short) 1);
+         return new NewTopic(topicName, partition, (short) isr);
     }
 }

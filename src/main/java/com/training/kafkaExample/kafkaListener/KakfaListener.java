@@ -16,7 +16,7 @@ public class KakfaListener {
 	}
 
 	@KafkaListener(topics = "${kafka.topic}")
-	public void listenWithHeaders(@Payload String message, @Header(KafkaHeaders.RECEIVED_PARTITION_ID) int partition) {
+	public void listenWithHeaders(@Payload String message) {
 	      System.out.println("Received Message: " + message + " from partition: " + partition);
 	}
 }
